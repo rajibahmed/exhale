@@ -8,8 +8,12 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
+var passport = require('passport');
 
 var app = express();
+
+mongoose.connect( 'mongodb://localhost:27017/adres' );
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -29,6 +33,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/users/show', user.show);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
