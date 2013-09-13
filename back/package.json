@@ -1,5 +1,5 @@
 {
-  "name": "Backend",
+  "name": "backend",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "express": "3.3.8",
     "jade": "*",
     "passport":"*",
-    "mongoose":"*"
+    "mongoose":"*",
+	"q":"*"
   }
 }
